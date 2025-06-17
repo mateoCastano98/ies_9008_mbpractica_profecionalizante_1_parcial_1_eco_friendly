@@ -1,0 +1,25 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f0f8e6; /* Verde claro */
+}
+
+.hero {
+    background-image: url('../assets/hero-reciclaje.jpg');
+    height: 300px;
+    text-align: center;
+    color: white;
+}
+
+/* Navbar */
+nav {
+    background-color: #2e8b57; /* Verde oscuro */
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
