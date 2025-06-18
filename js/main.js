@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // ==============================================
+    // Código para el Carrusel de Testimonios
+    // ==============================================
     const slidesContainer = document.querySelector('.testimonial-slides-container');
     const slides = document.querySelectorAll('.testimonial-slide');
     const prevArrow = document.querySelector('.prev-arrow');
@@ -12,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         slides.forEach((slide, i) => {
             if (i !== index) { // Si no es el slide que se va a mostrar
                 slide.classList.remove('active');
-                // No necesitamos display: none aquí inmediatamente, visibility: hidden ya los oculta
             }
         });
 
@@ -43,5 +45,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializa el carrusel mostrando el primer slide
     if (totalSlides > 0) {
         showSlide(currentSlide);
+    }
+
+    // ==============================================
+    // Código para el Menú Hamburguesa
+    // ==============================================
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburgerMenu && navLinks) {
+        hamburgerMenu.addEventListener('click', function() {
+            hamburgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Opcional: Cerrar el menú al hacer clic en un enlace (para single-page apps o para una mejor UX)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (hamburgerMenu.classList.contains('active')) {
+                    hamburgerMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    } else {
+        console.warn('Hamburger menu or nav links not found. Check your HTML.');
     }
 });

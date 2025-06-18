@@ -129,6 +129,41 @@ body {
     height: 100px; /* Adjust as needed */
 }
 
+/* >>> NUEVO/MODIFICADO PARA HAMBURGUESA <<< */
+/* Ocultar el botón de hamburguesa por defecto en desktop */
+.hamburger-menu {
+    display: none; /* Por defecto, ocultamos el botón en pantallas grandes */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor a una manita al pasar por encima */
+    padding: 10px; /* Espacio alrededor del botón */
+    z-index: 1001; /* Asegura que esté por encima de todo lo demás */
+    margin-left: auto; /* Mueve el botón a la derecha en la barra de navegación */
+}
+
+/* Estilos para cada una de las "barras" del icono de hamburguesa */
+.hamburger-menu .bar {
+    display: block; /* Cada barra es un bloque */
+    width: 25px; /* Ancho de la barra */
+    height: 3px; /* Alto de la barra */
+    background-color: var(--text-light); /* Color de las barras (puedes cambiarlo) */
+    margin: 5px auto; /* Espacio entre las barras */
+    transition: all 0.3s ease-in-out; /* Animación suave al abrir/cerrar */
+}
+
+/* Animación del botón cuando el menú está "activo" (abierto) */
+.hamburger-menu.active .bar:nth-child(1) { /* Primera barra */
+    transform: translateY(8px) rotate(45deg); /* Se mueve hacia abajo y gira */
+}
+.hamburger-menu.active .bar:nth-child(2) { /* Segunda barra (del medio) */
+    opacity: 0; /* Se hace invisible */
+}
+.hamburger-menu.active .bar:nth-child(3) { /* Tercera barra */
+    transform: translateY(-8px) rotate(-45deg); /* Se mueve hacia arriba y gira */
+}
+/* <<< FIN NUEVO/MODIFICADO PARA HAMBURGUESA >>> */
+
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -148,8 +183,6 @@ body {
 .nav-links a:hover {
     color: var(--primary-green);
 }
-
-/* Media queries for mobile menu (e.g., hamburger icon) would go here */
 
 
 /* ============================================== */
@@ -1036,14 +1069,69 @@ body {
         margin-bottom: 30px;
     }
 
-    /* Header */
+    /* >>> NUEVO/MODIFICADO PARA HAMBURGUESA <<< */
+    /* Header - Mobile */
+    .navbar {
+        flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente línea */
+        /* justify-content: space-between; (Ya está definido arriba, se mantiene) */
+        /* align-items: center; (Ya está definido arriba, se mantiene) */
+    }
+
     .navbar .logo img {
         height: 80px; /* Smaller logo */
     }
-    .nav-links {
-        /* You'd typically hide these and show a hamburger menu in JS */
-        display: none; /* Example: hide for mobile, controlled by JS for hamburger */
+
+    .hamburger-menu {
+        display: block; /* **Mostramos el botón de hamburguesa solo en móvil** */
     }
+
+    .nav-links {
+        flex-direction: column; /* Los enlaces se apilan verticalmente */
+        width: 100%; /* Los enlaces ocupan todo el ancho del nav */
+        background-color: var(--dark-charcoal); /* Fondo del menú cuando está desplegado */
+        position: absolute; /* Permite posicionar el menú libremente */
+        /* Ajusta este 'top' para que el menú aparezca justo debajo de tu header/navbar */
+        top: 100px; /* Valor tentativo, podrías necesitar ajustarlo */
+        left: 0;
+        right: 0;
+        height: 0; /* **Por defecto, el menú está oculto (altura 0)** */
+        overflow: hidden; /* Oculta cualquier contenido que se salga de la altura 0 */
+        transition: height 0.3s ease-in-out; /* Animación suave para abrir/cerrar */
+        z-index: 1000; /* Asegura que el menú esté por encima de otros contenidos */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para que destaque */
+    }
+
+    /* Clase que se añade con JavaScript para MOSTRAR el menú */
+    .nav-links.active {
+        height: auto; /* La altura se ajusta automáticamente al contenido */
+        max-height: 300px; /* Un límite de altura para evitar que ocupe demasiado si hay muchos enlaces */
+        padding-bottom: 20px; /* Espacio extra al final del menú */
+    }
+
+    .nav-links li {
+        margin: 0; /* Quitamos los márgenes que pueda tener en desktop */
+        text-align: center; /* Centramos el texto del enlace */
+        padding: 15px 0; /* Espacio vertical para cada enlace */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria entre enlaces */
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none; /* No ponemos línea divisoria en el último enlace */
+    }
+
+    .nav-links a {
+        font-size: 1.1em; /* Un poco más grande para móvil */
+        color: var(--text-light); /* Color de los enlaces */
+        display: block; /* Para que toda el área del 'li' sea clicable */
+        padding: 10px 0; /* Espacio interno para el clic */
+    }
+
+    .nav-links a:hover {
+        background-color: var(--primary-green); /* Fondo al pasar el mouse */
+        color: var(--dark-charcoal); /* Color del texto al pasar el mouse */
+    }
+    /* <<< FIN NUEVO/MODIFICADO PARA HAMBURGUESA >>> */
+
 
     /* Hero Section */
     .hero-content h1 {
