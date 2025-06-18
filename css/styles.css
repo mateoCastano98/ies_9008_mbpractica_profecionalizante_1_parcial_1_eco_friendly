@@ -818,6 +818,7 @@ body {
 /* Sección Historia y Contenido */
 .story-mission-section {
     background-color: var(--light-bg);
+    padding: 80px 0; /* Asegúrate de tener un padding adecuado */
 }
 
 .story-content {
@@ -825,12 +826,15 @@ body {
     flex-wrap: wrap;
     gap: 40px;
     align-items: center;
+    justify-content: center; /* Agregado para centrar horizontalmente si hay espacio extra */
+    max-width: 1000px; /* Puedes ajustar este ancho máximo si quieres que el bloque de historia sea más estrecho y centrado */
+    margin: 0 auto; /* Centra el bloque .story-content dentro de su .container si le pones un max-width */
 }
 
 .story-image {
     flex: 1;
     min-width: 300px;
-    max-width: 50%;
+    max-width: 500px; /* Ajustado el max-width para la imagen */
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -847,19 +851,21 @@ body {
 .story-text {
     flex: 1;
     min-width: 300px;
-    max-width: 50%;
+    max-width: 500px; /* Ajustado el max-width para el texto */
     color: var(--text-dark);
 }
 
 .story-text h2 {
     color: var(--dark-green);
     margin-bottom: 20px;
+    text-align: center; /* Centrado el título dentro del bloque de texto */
 }
 
 .story-text p {
     margin-bottom: 15px;
     line-height: 1.7;
     font-size: 1em;
+    text-align: justify; /* O 'left' si prefieres, el justify es común para párrafos largos */
 }
 
 /* Sección Misión, Visión y Valores */
@@ -868,6 +874,11 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     margin-top: 50px;
+    /* Nuevas propiedades para centrar la cuadrícula */
+    justify-content: center; /* Centra las columnas en el espacio disponible */
+    max-width: 1200px; /* Ajusta si quieres un ancho máximo para la cuadrícula */
+    margin-left: auto; /* Centra la cuadrícula */
+    margin-right: auto; /* Centra la cuadrícula */
 }
 
 .mision-vision-grid .grid-item {
@@ -896,6 +907,8 @@ body {
     align-items: center;
     margin: 0 auto 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    line-height: 1; /* Esto ayuda a resetear la altura de línea del icono */
+    transform: translateY(1px); /* Ajuste manual para centrado visual. Podrías necesitar +/- 1px o 2px */
 }
 
 .mision-vision-grid .grid-item h3 {
