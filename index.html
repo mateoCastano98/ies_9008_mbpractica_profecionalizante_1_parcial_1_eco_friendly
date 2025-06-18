@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Friendly</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/TU_CODIGO_DE_KIT.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -15,11 +19,11 @@
                 <img src="./assets/images/ecofriendly_logo.png" alt="Eco Friendly Logo">
             </a>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Servicios</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="#">Nosotros</a></li>
                 <li><a href="#">Noticias</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </div>
@@ -72,7 +76,7 @@
         <div class="container">
             <h3>¿Listos para dar el siguiente paso?</h3>
             <p>Contáctenos hoy mismo y descubra cómo Eco-friendly puede transformar la gestión ambiental de su empresa.</p>
-            <a href="#" class="btn primary-btn large-btn">Contáctenos hoy mismo</a>
+            <a href="contacto.html" class="btn primary-btn large-btn">Contáctenos hoy mismo</a>
         </div>
     </section>
 
@@ -92,20 +96,32 @@
         </div>
     </section>
 
-    <section class="our-services-section py-80">
+    <section class="services-section text-center py-80">
         <div class="container">
-            <h2 class="section-title text-center">Nuestros Servicios</h2>
+            <h2 class="section-title">Nuestros Servicios</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-check-circle service-icon"></i>
+                    <i class="fas fa-seedling service-icon"></i>
                     <h3>Evaluación de impacto ambiental y social de proyectos</h3>
-                    <p>Ver más</p>
+                    <p class="service-description">Análisis detallado de los efectos de tus proyectos en el entorno, garantizando el cumplimiento normativo y la sostenibilidad.</p>
+                    <a href="servicios.html" class="service-more-info">Ver más <i class="fas fa-arrow-right"></i></a>
                 </div>
+
                 <div class="service-card">
-                    <i class="fas fa-check-circle service-icon"></i>
+                    <i class="fas fa-clipboard-list service-icon"></i>
                     <h3>Gestión de permisos y licencias ambientales</h3>
-                    <p>Ver más</p>
+                    <p class="service-description">Asesoramiento y tramitación de todos los permisos y licencias necesarios para operar legalmente y con responsabilidad.</p>
+                    <a href="servicios.html" class="service-more-info">Ver más <i class="fas fa-arrow-right"></i></a>
                 </div>
+
+                <div class="service-card">
+                    <i class="fas fa-chart-line service-icon"></i>
+                    <h3>Diseño y aplicación de planes de manejo ambiental</h3>
+                    <p class="service-description">Desarrollo de estrategias personalizadas para la gestión de recursos, residuos y mitigación de impactos ambientales.</p>
+                    <a href="servicios.html" class="service-more-info">Ver más <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-40"> <a href="servicios.html" class="btn primary-btn large-btn">Ver todos los servicios</a>
             </div>
         </div>
     </section>
@@ -119,23 +135,27 @@
         <div class="footer-col">
             <h4>Otros Sitios</h4>
             <ul>
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Sellos ambientales</a></li>
+                <li><a href="#">Cálculo huella de carbono</a></li>
             </ul>
         </div>
         <div class="footer-col">
             <h4>Site web</h4>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
         <div class="footer-col">
             <h4>Contacto</h4>
-            <p>Dirección: Calle Falsa 123, Ciudad, País</p>
-            <p>Teléfono: +123 456 7890</p>
-            <p>Email: info@ecofriendly.com</p>
+            <p>Home</p>
+            <p>Mendoza, siempre viva 123</p>
+            <p>Mendoza, ARG</p>
+            <p>contacto@ecofriendly.com</p>
+            <p>+ 54 9 12341234</p>
         </div>
     </div>
 </footer>

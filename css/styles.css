@@ -467,3 +467,678 @@ body {
         padding-left: 0;
     }
 }
+/* ============================================== */
+/* Contact Page Specific Styles */
+/* ============================================== */
+
+/* Sección del título de contacto (similar al header/hero inicial) */
+.contact-hero-section {
+    background-color: var(--dark-charcoal); /* O usa el verde oscuro si lo prefieres para este hero */
+    color: var(--text-light);
+    padding: 100px 0 50px; /* Padding para separar del header y del formulario */
+    text-align: center;
+    position: relative; /* Para el fondo del hero si decides poner una imagen aquí */
+    z-index: 0; /* Asegura que el contenido quede por encima del header que es position:absolute */
+}
+
+.contact-hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-title {
+    font-size: 3.5em; /* Ajusta el tamaño como en la imagen */
+    color: var(--text-light); /* Texto blanco */
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block; /* Para que el underline se ajuste al texto */
+    font-weight: bold; /* Si la fuente lo permite, para un aspecto más contundente */
+    text-transform: uppercase; /* Para que sea todo mayúsculas como en la imagen */
+}
+
+.contact-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px; /* Ajusta la posición del subrayado */
+    transform: translateX(-50%);
+    width: 60%; /* Ancho del subrayado */
+    height: 3px; /* Grosor del subrayado */
+    background-color: #007bff; /* Un azul para el subrayado, como en la imagen. Si no lo tienes en tu paleta, puedes definirlo o usar un verde. */
+    /* Si quieres usar un color de tu paleta, quizás un tono que contraste bien con el blanco,
+       o añadir una nueva variable para ese azul en :root si es un color recurrente.
+       Por ejemplo: background-color: var(--color-medium-green-grey-palette);
+    */
+}
+
+
+/* Sección del formulario */
+.contact-form-section {
+    background-color: var(--primary-green); /* El verde claro/lima para el fondo del formulario */
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Para que el formulario ocupe una buena parte de la pantalla */
+}
+
+.contact-form {
+    background-color: var(--off-white); /* Fondo blanco roto para el formulario en sí */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Ancho máximo del formulario */
+    width: 100%;
+}
+
+.form-group, .form-group-half {
+    margin-bottom: 20px;
+}
+
+.form-group label, .form-group-half label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark); /* Color de texto oscuro para las etiquetas */
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group textarea,
+.form-group-half input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif; /* Consistencia con la fuente del cuerpo */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px; /* Altura mínima para el área de mensaje */
+}
+
+.form-group-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px; /* Ajusta el tamaño de la casilla si es necesario */
+    height: 20px;
+    min-width: 20px; /* Asegura que no se achique en flex */
+    min-height: 20px;
+    accent-color: var(--primary-green); /* Color del check cuando está marcado */
+}
+
+.form-group-checkbox label {
+    margin-bottom: 0;
+    font-size: 0.95em;
+    color: var(--text-dark);
+}
+
+.privacy-link {
+    color: var(--dark-green); /* O un verde más oscuro de tu paleta */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+    color: var(--primary-green);
+}
+
+.submit-btn {
+    width: auto; /* Para que el botón no ocupe todo el ancho */
+    margin: 0 auto; /* Centrar el botón */
+    display: block; /* Para que margin auto funcione */
+}
+
+/* Flexbox para Nombre y Apellido lado a lado */
+@media (min-width: 768px) {
+    .contact-form .form-group-half:first-child {
+        margin-right: 20px; /* Espacio entre Nombre y Apellido */
+    }
+
+    .contact-form .form-group-half {
+        flex: 1; /* Distribuye el espacio equitativamente */
+    }
+
+    .contact-form > div:nth-child(1),
+    .contact-form > div:nth-child(2) {
+        display: flex; /* Contenedor para los dos primeros form-group-half */
+    }
+}
+
+/* Responsividad general para el formulario */
+@media (max-width: 767px) {
+    .contact-title {
+        font-size: 2.5em; /* Ajustar tamaño del título en móvil */
+    }
+    .contact-title::after {
+        width: 80%; /* Hacer el subrayado un poco más ancho en móvil */
+    }
+
+    .contact-form {
+        padding: 25px; /* Reducir padding en móvil */
+    }
+
+    .form-group-half {
+        margin-right: 0 !important; /* Eliminar margen derecho en móvil */
+        width: 100%; /* Ocupar todo el ancho en móvil */
+    }
+
+    .contact-form > div:nth-child(1),
+    .contact-form > div:nth-child(2) {
+        flex-direction: column; /* Apilar Nombre y Apellido en móvil */
+    }
+}
+
+/* Asegúrate de que las reglas para .btn, .primary-btn, .large-btn estén definidas en tu style.css general */
+/* Las tenías en el ejemplo del Home, así que deberían estar ya ahí. */
+
+/* ============================================== */
+/* Services Page Specific Styles */
+/* ============================================== */
+
+/* Hero Section para la página de Servicios */
+.services-hero-section {
+    background-color: var(--dark-green); /* O el dark-charcoal si prefieres el fondo oscuro */
+    color: var(--text-light);
+    padding: 120px 0 80px; /* Padding para espacio y altura del hero */
+    text-align: center;
+    position: relative; /* Para posibles fondos de imagen */
+    z-index: 0;
+}
+
+.services-hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.services-title {
+    font-size: 3.8em; /* Tamaño de título grande */
+    margin-bottom: 15px;
+    color: var(--primary-green); /* El verde lima para el título */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.services-subtitle {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9); /* Texto blanco ligeramente transparente */
+}
+
+/* Ajustes a las tarjetas de servicio para la página dedicada */
+/* Reutilizamos .services-grid y .service-card que ya tenías */
+.all-services-grid {
+    background-color: var(--light-bg); /* Fondo claro para las tarjetas */
+}
+
+/* La clase .services-grid ya define la cuadrícula (display: grid, grid-template-columns) */
+/* Si necesitas más espacio entre las tarjetas aquí que en la Home, puedes ajustar el 'gap' */
+
+.service-card {
+    /* Estas propiedades ya deberían estar en tu style.css por la Home */
+    /* background-color: var(--off-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.service-icon {
+    /* Estas propiedades ya deberían estar en tu style.css */
+    /* font-size: 3em;
+    color: var(--primary-green);
+    margin-bottom: 20px; */
+}
+
+.service-card h3 {
+    /* Ya debería estar en tu style.css */
+    /* font-size: 1.3em;
+    margin-bottom: 15px;
+    color: var(--text-dark); */
+    min-height: 50px; /* Asegura que todos los títulos tengan una altura mínima similar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-description {
+    font-size: 0.95em;
+    color: var(--grey-text); /* O un dark-charcoal más suave */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Para que ocupe el espacio disponible y los "Ver más" se alineen */
+}
+
+.service-more-info {
+    color: var(--dark-green); /* Un verde más oscuro para el enlace */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex; /* Para alinear el texto y el icono */
+    align-items: center;
+    justify-content: center; /* Centrar el enlace en la tarjeta */
+    margin-top: auto; /* Empuja el enlace hacia abajo si .service-description tiene flex-grow */
+}
+
+.service-more-info i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.service-more-info:hover {
+    color: var(--primary-green);
+}
+
+.service-more-info:hover i {
+    transform: translateX(5px); /* Pequeño efecto al pasar el mouse */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 767px) {
+    .services-title {
+        font-size: 2.8em;
+    }
+    .services-subtitle {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+    .service-card h3 {
+        min-height: auto; /* Remover la altura fija en móviles si no es necesaria */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-title {
+        font-size: 2em;
+    }
+}
+
+/* El .next-steps-section al final es el mismo que en la Home, así que no necesita CSS adicional */
+
+/* Utilidades / Márgenes */
+.mt-40 {
+    margin-top: 40px;
+}
+
+/* También, si quieres que la cuadrícula de 3 elementos se vea bien en desktop,
+   asegúrate de que services-grid maneje 3 columnas si es el caso.
+   Tu .services-grid actual con `repeat(auto-fit, minmax(280px, 1fr))` debería
+   manejarlo bien automáticamente, pero si quieres forzar 3 en desktop puedes hacer:
+*/
+/*
+@media (min-width: 992px) { // Ejemplo para pantallas grandes
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+*/
+/* El actual `auto-fit` es bastante flexible y probablemente ya se vea bien con 3 */
+/* ============================================== */
+/* About Us Page Specific Styles */
+/* ============================================== */
+
+/* Hero Section para la página de Nosotros */
+.about-hero-section {
+    background-color: var(--dark-charcoal); /* O el dark-green si prefieres */
+    color: var(--text-light);
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.about-hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about-title {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    color: var(--primary-green); /* Verde lima para el título */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.about-subtitle {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Sección Historia y Contenido */
+.story-mission-section {
+    background-color: var(--light-bg); /* Fondo claro */
+}
+
+.story-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
+    gap: 40px; /* Espacio entre la imagen y el texto */
+    align-items: center; /* Centra verticalmente si los contenidos tienen diferentes alturas */
+}
+
+.story-image {
+    flex: 1; /* Ocupa el espacio disponible */
+    min-width: 300px; /* Ancho mínimo antes de apilar */
+    max-width: 50%; /* No más de la mitad del contenedor */
+    /* Asegura que la imagen no se desborde */
+    overflow: hidden;
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border-radius: 8px; /* Bordes redondeados también para la imagen */
+}
+
+.story-text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 50%;
+    color: var(--text-dark);
+}
+
+.story-text h2 {
+    color: var(--dark-green); /* Color para el título de la historia */
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: 1em;
+}
+
+/* Sección Misión, Visión y Valores */
+.bg-light-green {
+    background-color: var(--primary-green); /* El verde lima de tu paleta */
+    color: var(--text-dark); /* Texto oscuro para este fondo claro */
+}
+
+.mision-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.mision-vision-grid .grid-item {
+    background-color: var(--off-white); /* Fondo blanco roto para las tarjetas */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mision-vision-grid .grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle {
+    font-size: 2.5em; /* Tamaño del icono */
+    color: var(--dark-green); /* Color del icono */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente blanco para el círculo */
+    border-radius: 50%; /* Forma circular */
+    width: 70px; /* Ancho del círculo */
+    height: 70px; /* Altura del círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px; /* Centrar y margen inferior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra suave para el círculo */
+}
+
+.mision-vision-grid .grid-item h3 {
+    font-size: 1.5em;
+    color: var(--dark-charcoal); /* Color de texto oscuro para los títulos */
+    margin-bottom: 15px;
+}
+
+.mision-vision-grid .grid-item p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--grey-text);
+}
+
+.mision-vision-grid .grid-item ul {
+    list-style: none; /* Eliminar viñetas predeterminadas */
+    padding: 0;
+    text-align: left; /* Alinea los ítems de la lista a la izquierda */
+    margin-top: 15px;
+}
+
+.mision-vision-grid .grid-item ul li {
+    margin-bottom: 8px;
+    color: var(--grey-text);
+    font-size: 0.95em;
+    position: relative; /* Para posibles iconos personalizados si no quieres viñetas */
+    padding-left: 20px; /* Espacio para una viñeta o icono personalizado */
+}
+
+.mision-vision-grid .grid-item ul {
+    list-style: none; /* Elimina las viñetas predeterminadas del navegador */
+    padding: 0;
+    text-align: left; /* Alinea los ítems de la lista a la izquierda */
+    margin-top: 15px;
+}
+
+.mision-vision-grid .grid-item ul li {
+    margin-bottom: 8px; /* Espacio entre cada ítem de la lista */
+    color: var(--grey-text); /* Color del texto del ítem */
+    font-size: 0.95em;
+    position: relative; /* Esencial para posicionar la viñeta personalizada */
+    padding-left: 20px; /* Crea espacio a la izquierda para la viñeta */
+}
+
+.mision-vision-grid .grid-item ul li::before {
+    content: '\2022'; /* El carácter Unicode para un punto (•) */
+    color: var(--dark-green); /* Color de la viñeta (puedes cambiarlo a var(--primary-green) si prefieres un verde más claro) */
+    font-weight: bold; /* Hace el punto más visible */
+    display: inline-block;
+    width: 1em; /* Ancho para el espacio del carácter */
+    position: absolute; /* Posiciona la viñeta de forma absoluta */
+    left: 0; /* La coloca al inicio del padding-left */
+    top: 0; /* Alinea la viñeta con la parte superior del texto del li */
+}
+
+
+/* Responsividad para la página Nosotros */
+@media (max-width: 992px) {
+    .story-content {
+        flex-direction: column; /* Apilar imagen y texto en pantallas medianas */
+    }
+    .story-image, .story-text {
+        max-width: 100%; /* Ocupar todo el ancho disponible */
+    }
+    .story-image {
+        margin-bottom: 30px; /* Espacio entre imagen y texto apilado */
+    }
+    .story-text h2 {
+        text-align: center; /* Centrar título en móvil */
+    }
+}
+
+@media (max-width: 767px) {
+    .about-title {
+        font-size: 2.8em;
+    }
+    .about-subtitle {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+    .mision-vision-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 2em;
+    }
+    .story-text p, .mision-vision-grid .grid-item p {
+        font-size: 0.9em;
+    }
+}
+/* ============================================== */
+/* News Page Specific Styles */
+/* ============================================== */
+
+/* Hero Section para la página de Noticias */
+.news-hero-section {
+    background-color: var(--dark-green); /* O el dark-charcoal si prefieres */
+    color: var(--text-light);
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.news-hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.news-title {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    color: var(--primary-green); /* Verde lima para el título */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.news-subtitle {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Sección de listado de noticias */
+.news-list-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--light-bg); /* Fondo claro para la sección, si necesitas contrastar con el hero */
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Columnas responsivas */
+    gap: 40px; /* Espacio entre las noticias */
+    margin-top: 40px;
+}
+
+.news-item {
+    background-color: var(--off-white); /* Fondo blanco para cada tarjeta de noticia */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Apila imagen y contenido */
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+.news-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra al pasar el mouse */
+}
+
+.news-image {
+    width: 100%;
+    height: 220px; /* Altura fija para las imágenes, ajusta si es necesario */
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre el contenedor sin distorsionar la imagen */
+    display: block;
+}
+
+.news-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que el contenido se expanda para llenar el espacio */
+}
+
+.news-title-item {
+    font-size: 1.5em;
+    color: var(--dark-green); /* Color para los títulos de las noticias */
+    margin-bottom: 15px;
+}
+
+.news-excerpt {
+    font-size: 1em;
+    color: var(--grey-text); /* Color para el extracto de texto */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Permite que el extracto empuje el "Leer más" hacia abajo si hay espacio */
+}
+
+.news-read-more {
+    color: var(--primary-green); /* Color para el enlace "Leer más" */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-flex; /* Para alinear texto y icono */
+    align-items: center;
+}
+
+.news-read-more i {
+    margin-left: 8px; /* Espacio entre texto y flecha */
+}
+
+.news-read-more:hover {
+    color: var(--dark-green); /* Cambio de color al pasar el mouse */
+}
+
+/* Media Queries para la página de Noticias */
+@media (max-width: 767px) {
+    .news-title {
+        font-size: 2.8em;
+    }
+    .news-subtitle {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+    .news-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .news-title {
+        font-size: 2em;
+    }
+    .news-title-item {
+        font-size: 1.3em;
+    }
+    .news-excerpt {
+        font-size: 0.9em;
+    }
+}
