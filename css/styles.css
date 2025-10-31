@@ -313,9 +313,7 @@ body {
 }
 
 /* Services Section (Home Page specific, with 3 cards) */
-.services-section {
-    /* Esto ya lo tenías, solo aseguro que la clase exista */
-}
+
 
 .services-grid {
     display: grid;
@@ -1307,4 +1305,107 @@ body {
     .news-excerpt {
         font-size: 0.9em;
     }
+}
+
+/* ============================================== */
+/* Estilos para Iteración 2 (Formularios, Panel) */
+/* ============================================== */
+
+/* Estilos para mensajes de error/éxito en formularios */
+.form-message-error {
+    display: none;
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #c62828;
+}
+.form-message-success {
+    display: none;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #2e7d32;
+}
+
+/* Estilos para la Calculadora */
+.calculator-result {
+    background-color: var(--dark-green);
+    color: var(--text-light);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 30px;
+}
+.calculator-result h3 {
+    color: var(--primary-green);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.calculator-result p {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--text-light);
+}
+
+/* Estilos para el Panel de Cliente */
+.panel-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px; /* Asegura padding dentro del contenedor general */
+}
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--dark-green);
+    padding-bottom: 10px;
+    flex-wrap: wrap; /* Para responsividad */
+    gap: 15px;
+}
+.panel-header h1 {
+    font-size: 2em;
+    color: var(--dark-green);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+.panel-section {
+    margin-top: 40px;
+}
+.panel-section h2 {
+    font-size: 1.8em;
+    color: var(--dark-charcoal);
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid var(--primary-green);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+.list-item {
+    background: var(--off-white);
+    border: 1px solid #eee;
+    border-left: 5px solid var(--primary-green);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.list-item p {
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+}
+.list-item p:last-child {
+    margin-bottom: 0;
+}
+.list-item strong {
+    color: var(--dark-green);
+}
+.estado-vigente {
+    color: #2e7d32;
+    font-weight: bold;
+}
+.estado-vencido {
+    color: #c62828;
+    font-weight: bold;
 }
