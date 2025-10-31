@@ -1,2 +1,2 @@
-# ies_9008_mbpractica_profecionalizante_1_parcial_1_eco_friendly
-Primer parcial de practica profesionalizante
+# ies_9008_mbpractica_proyecto_ecofriendly
+Proyecto para parcial 1, 2 y final
